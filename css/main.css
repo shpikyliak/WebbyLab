@@ -1,0 +1,22 @@
+input[type='file']
+{
+	display: inline;
+}
+label
+{
+	margin: 5px;
+}
+#messages
+{
+	padding: 15px;
+}
+#film
+{
+	padding: 25px;
+}
+#search
+{
+	position: absolute;
+	right: 20px;
+	top: 30px;
+}
