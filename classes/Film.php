@@ -11,7 +11,7 @@ class Film
     {
         $this->title = $film['Title'];
         $this->releaseYear = $film['Release Year'];
-        $this->format = $film['Format'];
+            $this->format = $film['Format'];
         $this->stars = $film['Stars'];
 
     }

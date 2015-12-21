@@ -19,11 +19,14 @@ class ControllerMain extends Controller
     }
     public function actionImport()
     {
+        //url for redirect
         $url = 'http://'.$_SERVER['HTTP_HOST'].'/';
         try {
             $this->model->import($_FILES);
+            //get warnings
             $warnings = Warnings::getWarning();
             $url .= '?';
+            //add warnings to url
             if (isset($warnings))
             {
                 $url.='warnings=';
@@ -37,7 +40,7 @@ class ControllerMain extends Controller
         {
             $url .= 'error/?err='.urlencode($e->getMessage()).'&refeer='.urlencode($_SERVER['HTTP_REFERER']);
         }
-
+    //redirect
         header('Location: '.$url);
         exit;
     }

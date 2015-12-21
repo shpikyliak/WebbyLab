@@ -48,6 +48,7 @@ class DB
 
     public function add($film)
     {
+
         $sql = "INSERT INTO films (title,release_year,format,stars) VALUES ('" . $film->title . "','" . $film->releaseYear . "','" . $film->format . "','"
             . $film->stars . "');   ";
 
@@ -58,7 +59,6 @@ class DB
     public  function delete($id)
     {
         $sql = "DELETE FROM films where id=" . $id;
-       // throw new Exception($sql);
         $result = mysqli_query($this->mysqli, $sql);
         if (!$result) {
             throw new Exception('Not data base connect');
